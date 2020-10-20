@@ -30,6 +30,8 @@ repositories {
 	jcenter()
 }
 
+configurations { compileOnly { extendsFrom annotationProcessor } }
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
@@ -38,6 +40,12 @@ dependencies {
 	}
 	implementation('javax.servlet:jstl:1.2')
 	implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
+	
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1")
+	compile("org.mariadb.jdbc:mariadb-java-client:2.6.0")
 }
 
 test {

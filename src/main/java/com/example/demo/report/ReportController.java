@@ -1,32 +1,21 @@
-package com.example.demo;
+package com.example.demo.report;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-//@Controller
-public class Demo2Controller {
+@Controller
+public class ReportController {
 
-	@Autowired
-	
-	
 	@RequestMapping("/hello2")
 	public String hello(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		request.setAttribute("message", "hi cl");
-		System.out.println("작동1");
+		System.out.println("RequestController 작동..");
 		return "index";
-	}
-	
-	
-	@RequestMapping(value="/prac")
-	public String practice() {
-		System.out.println("작동2");
-		return "index2";
 	}
 }

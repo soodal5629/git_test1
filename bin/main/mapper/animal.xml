@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.animal.mapper.AnimalMapper">
+	
+	<select id="selectAnimalCount" resultType="int">
+		select count(*) from animal;
+	</select>
+	
+	<select id="dogList" resultType="com.example.demo.animal.dto.AnimalDTO">
+		select * from animal where kind = 'dog'
+	</select>
+	
+	<select id="catList" resultType="com.example.demo.animal.dto.AnimalDTO">
+		select * from animal where kind = 'cat'
+	</select>
+	
+	<select id="dogDetail" parameterType="int" resultType="com.example.demo.animal.dto.AnimalDTO">
+		select * from animal where animal_idx = #{animal_idx}
+	</select>
+	
+</mapper>
